@@ -21,6 +21,22 @@ config TARGET_EVB_RK3399
 	  with full function and physical connectors support like Type-C ports,
 	  USB.0 host ports, LVDS, JTAG, MAC, SD card, HDMI, USB-to-serial...
 
+config TARGET_HELIOS64
+	bool "Kobol Innovations Helios64"
+	select BOARD_LATE_INIT
+	help
+	  Helios64 is a Network Attached Storage board based on Rockchip RK3399.
+
+	  Key features of the Helios64 include:
+	   * on-board PCIe to 5 Ports SATA Controller JMB585
+	   * on-board USB 3.0 hub (3x USB 3.0 host)
+	   * USB Type-C (Support DisplayPort Alt Mode)
+	   * on-board 1 Gigabit Ethernet
+	   * on-board 2.5 Gigabit Ethernet (Realtek RTL8156)
+	   * on-board eMMC
+	   * on-board LPDDR4
+	   * SPI, I2C, UART, GPIO
+
 config TARGET_PINEBOOK_PRO_RK3399
 	bool "Pinebook Pro"
 	help
@@ -153,6 +169,7 @@ endif # BOOTCOUNT_LIMIT
 
 source "board/firefly/roc-pc-rk3399/Kconfig"
 source "board/google/gru/Kconfig"
+source "board/kobol/helios64/Kconfig"
 source "board/pine64/pinebook-pro-rk3399/Kconfig"
 source "board/pine64/rockpro64_rk3399/Kconfig"
 source "board/rockchip/evb_rk3399/Kconfig"
